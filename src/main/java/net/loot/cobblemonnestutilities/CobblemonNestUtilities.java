@@ -1,12 +1,17 @@
 package net.loot.cobblemonnestutilities;
 
+import com.cobblemon.mod.common.item.group.CobblemonItemGroups;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.loot.cobblemonnestutilities.items.CobblemonNestUtilitiesItems;
+import net.minecraft.item.ItemGroups;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CobblemonNestUtilities implements ModInitializer {
-	public static final String MOD_ID = "cobblemon-nest-utilities";
+	public static final String MOD_ID = "cobblemonnestutilities";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -18,6 +23,13 @@ public class CobblemonNestUtilities implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		CobblemonNestUtilitiesItems.initialize();
+
+		CompostingChanceRegistry.INSTANCE.add(CobblemonNestUtilitiesItems.KINGS_LEAF, 0.5f);
+
+		ItemGroupEvents.modifyEntriesEvent(CobblemonItemGroups.getAGRICULTURE_KEY()).register(content -> {
+			content.add(CobblemonNestUtilitiesItems.KINGS_LEAF);
+		});
 
 		LOGGER.info("Hello Fabric world!");
 	}

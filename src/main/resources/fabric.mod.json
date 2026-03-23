@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "cobblemon-nest-utilities",
+	"id": "cobblemonnestutilities",
 	"version": "${version}",
 	"name": "Cobblemon Nest Utilities",
 	"description": "This is a utility mod for The Nest's Cobblemon Modpack!",
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/cobblemon-nest-utilities/icon.png",
+	"icon": "assets/cobblemonnestutilities/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,9 +23,9 @@
 		]
 	},
 	"mixins": [
-		"cobblemon-nest-utilities.mixins.json",
+		"cobblemonnestutilities.mixins.json",
 		{
-			"config": "cobblemon-nest-utilities.client.mixins.json",
+			"config": "cobblemonnestutilities.client.mixins.json",
 			"environment": "client"
 		}
 	],
