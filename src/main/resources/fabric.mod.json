@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "cobblemon-nest-utilities",
+	"version": "${version}",
+	"name": "Cobblemon Nest Utilities",
+	"description": "This is a utility mod for The Nest's Cobblemon Modpack!",
+	"authors": [
+		"Loot_"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cobblemon-nest-utilities/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.loot.cobblemonnestutilities.CobblemonNestUtilities"
+		],
+		"client": [
+			"net.loot.cobblemonnestutilities.CobblemonNestUtilitiesClient"
+		]
+	},
+	"mixins": [
+		"cobblemon-nest-utilities.mixins.json",
+		{
+			"config": "cobblemon-nest-utilities.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
