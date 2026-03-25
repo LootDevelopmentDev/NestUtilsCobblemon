@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.loot.cobblemonnestutilities.blocks.CobblemonNestUtilitiesBlocks;
 import net.loot.cobblemonnestutilities.items.CobblemonNestUtilitiesItems;
 import net.minecraft.item.ItemGroups;
 import org.slf4j.Logger;
@@ -20,17 +21,20 @@ public class CobblemonNestUtilities implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		// Initializing mod factories
 		CobblemonNestUtilitiesItems.initialize();
+		CobblemonNestUtilitiesBlocks.initialize();
 
+		// Add composting items
 		CompostingChanceRegistry.INSTANCE.add(CobblemonNestUtilitiesItems.KINGS_LEAF, 0.5f);
+		CompostingChanceRegistry.INSTANCE.add(CobblemonNestUtilitiesItems.KINGS_LEAF_SEEDS, 0.3f);
 
+		// Add items to cobblemon tabs
 		ItemGroupEvents.modifyEntriesEvent(CobblemonItemGroups.getAGRICULTURE_KEY()).register(content -> {
 			content.add(CobblemonNestUtilitiesItems.KINGS_LEAF);
 		});
-
-		LOGGER.info("Hello Fabric world!");
+		ItemGroupEvents.modifyEntriesEvent(CobblemonItemGroups.getAGRICULTURE_KEY()).register(content -> {
+			content.add(CobblemonNestUtilitiesItems.KINGS_LEAF_SEEDS);
+		});
 	}
 }
