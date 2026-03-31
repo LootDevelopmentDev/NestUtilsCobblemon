@@ -2,7 +2,7 @@ package net.loot.cobblemonnestutilities;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.loot.cobblemonnestutilities.mixin.CobblemonNestUtilitiesLootTableProvider;
+import net.loot.cobblemonnestutilities.datagen.CobblemonNestUtilitiesLootTableProvider;
 
 public class CobblemonNestUtilitiesDataGenerator implements DataGeneratorEntrypoint {
 
