@@ -15,6 +15,9 @@
 	"icon": "assets/cobblemonnestutilities/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"net.loot.cobblemonnestutilities.CobblemonNestUtilitiesDataGenerator"
+		],
 		"main": [
 			"net.loot.cobblemonnestutilities.CobblemonNestUtilities"
 		],
