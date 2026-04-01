@@ -33,6 +33,9 @@
 		}
 	],
 	"depends": {
+		"cobbreeding": "2.2.1",
+		"mega_showdown": "1.7.2+1.7.3",
+		"cobblemon": "1.7.3",
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
